@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111d">
+  <meta name="description" content="Project Frontier — Julie's living personal operating system.">
+  <title>Project Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="foundation.css">
+  <link rel="stylesheet" href="codex.css">
+  <link rel="stylesheet" href="mission-control.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar" aria-label="Project Frontier realms">
+      <button class="sidebar-brand" data-route="threshold" aria-label="Return to the Threshold">
+        <span class="brand-mark">PF</span>
+        <span><strong>PROJECT FRONTIER</strong><small>THE LIVING WORLD</small></span>
+      </button>
+
+      <nav class="realm-nav" aria-label="Primary navigation">
+        <button data-route="mission-control"><span>⌁</span>Mission Control</button>
+        <button data-route="contents"><span>◇</span>Codex</button>
+        <button data-route="sanctuary"><span>♧</span>Sanctuary</button>
+        <button data-route="observatory"><span>✦</span>Observatory</button>
+        <button data-route="atlas"><span>⌖</span>Atlas</button>
+        <button data-route="archive"><span>▤</span>Archive</button>
+        <button data-route="character"><span>◈</span>Character</button>
+        <button data-route="log"><span>✎</span>Captain's Log</button>
+        <button data-route="settings"><span>⚙</span>Settings</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="captain-chip"><span class="signal-dot"></span><span id="captain-chip-name">Julie</span></div>
+        <button class="threshold-link" data-route="threshold">Return to Threshold</button>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="topbar-title"><strong id="realm-title">PROJECT FRONTIER</strong><small id="realm-subtitle">THE LIVING WORLD</small></div>
+        <button class="topbar-threshold" data-route="threshold">Threshold</button>
+      </header>
+
+      <main id="view" tabindex="-1"></main>
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <button data-route="mission-control">Control</button>
+        <button data-route="contents">Codex</button>
+        <button data-route="log">Log</button>
+        <button data-route="observatory">Observe</button>
+        <button data-route="settings">Settings</button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="sidebar-scrim" id="sidebar-scrim" hidden></div>
+
+  <template id="toast-template"><div class="toast" role="status"></div></template>
+
+  <script src="campaign.js"></script>
+  <script src="storage.js"></script>
+  <script src="state.js"></script>
+  <script src="router.js"></script>
+  <script src="views.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
